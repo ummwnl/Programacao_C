@@ -27,6 +27,8 @@ int main() {
     printf("Digite o número de pontos turísticos da primeira carta:\n");
     scanf("%d", &pontos_turisticos1);
 
+    printf("----------------------------------------\n");
+
     //Solicitando dados da segunda carta
     printf("Digite o estado da segunda carta:\n");
     scanf(" %c", &estado2);
@@ -43,15 +45,25 @@ int main() {
     printf("Digite o número de pontos turísticos da segunda carta:\n");
     scanf("%d", &pontos_turisticos2);
 
+    //Declrando novas variáveis e atribuindo operações aritméticas
+    float densidade_populacional1 = populacao1 / area1;
+    float densidade_populacional2 = populacao2 / area2;
+    float pib_per_capita1 = pib1 / populacao1;
+    float pib_per_capita2 = pib2 / populacao2;
+
+    printf("----------------------------------------\n");
+
     //Imprimindo os dados da primeira carta
-    printf("\nCarta 1\n");
+    printf("Carta 1\n");
     printf("Estado: %c\n", estado1);
     printf("Código: %s\n", codigo1);
     printf("Nome da Cidade: %s\n", cidade1);
     printf("População: %d\n", populacao1);
-    printf("Área: %f\n", area1);
-    printf("PIB: %f\n", pib1);
+    printf("Área: %.2f km^2\n", area1);
+    printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pontos_turisticos1);
+    printf("Densidade Populacional: %.2f hab/km^2\n", densidade_populacional1);
+    printf("PIB per Capita: %.2f reais\n", pib_per_capita1);
 
     //Imprimindo os dados da segunda carta
     printf("\nCarta 2\n");
@@ -59,9 +71,11 @@ int main() {
     printf("Código: %s\n", codigo2);
     printf("Nome da Cidade: %s\n", cidade2);
     printf("População: %d\n", populacao2);
-    printf("Área: %f\n", area2);
-    printf("PIB: %f\n", pib2);
+    printf("Área: %.2f km^2\n", area2);
+    printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontos_turisticos2);
-
+    printf("Densidade Populacional: %.2f hab/km^2\n", densidade_populacional2);
+    printf("PIB per Capita: %.2f reais\n", pib_per_capita2);
+    
     return 0;
 }
