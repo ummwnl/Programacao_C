@@ -79,28 +79,55 @@ printf("----------------------------------------\n");
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", (int) pontos_turisticos2);
     printf("Densidade Populacional: %.2f hab/km^2\n", densidade_populacional2);
-    printf("PIB per Capita: %.2f reais\n", pib_per_capita2);
+    printf("PIB per Capita: %.2f reais\n\n", pib_per_capita2);
 
-printf("----------------------------------------\n");
+    //Comparando os resultados
+    int resultado1 = 0;
+    int resultado2 = 0;
 
-    //Informando ao usuário sobre a comparação das cartas
-    printf("\nComparação dos dados:\n");
-    printf("O número 1 representa a carta 1.\n");
-    printf("O número 0 representa a carta 2\n");
-    
-    //Comparando as cartas
-    printf("\nA carta que contém o maior super poder é: %d \n", (int) super_poder1 > super_poder2);
-    printf("A carta que contém a maior população é: %d \n", (int) populacao1 > populacao2);
-    printf("A carta que contém a maior área é: %d \n", (int) area1 > area2);
-    printf("A carta que contém o maior PIB é: %d \n", (int) pib1 > pib2);
-    printf("A carta que contém a maior quantidade de pontos turísticos é: %d \n", (int) pontos_turisticos1 > pontos_turisticos2);
-    printf("A carta que contém o menor densidade populacional é: %d \n", (int) densidade_populacional1 < densidade_populacional2);
-    printf("A carta que contém o maior PIB per capita é: %d \n", (int) pib_per_capita1 > pib_per_capita2);
+    if (super_poder1 > super_poder2) {
+        resultado1++;
+    } else if (super_poder1 < super_poder2) {
+        resultado2++;
+    }
+    if (populacao1 > populacao2) {
+        resultado1++;
+    } else if (populacao1 < populacao2) {
+        resultado2++;
+    }
+    if (area1 > area2) {
+        resultado1++;
+    } else if (area1 < area2) {
+        resultado2++;
+    }
+    if (pib1 > pib2) {
+        resultado1++;
+    } else if (pib1 < pib2) {
+        resultado2++;
+    }
+    if (pontos_turisticos1 > pontos_turisticos2) {
+        resultado1++;
+    } else if (pontos_turisticos1 < pontos_turisticos2) {
+        resultado2++;
+    }
+    if (densidade_populacional1 > densidade_populacional2) {
+        resultado1--;
+    } else if (densidade_populacional1 < densidade_populacional2) {
+        resultado2--;
+    }
+    if (pib_per_capita1 > pib_per_capita2) {
+        resultado1++;
+    } else if (pib_per_capita1 < pib_per_capita2) {
+        resultado2++;
+    }
 
-    //Informando ao usuário sobre o resultado
-    printf("\nSe a na maioria dos resultados a resposta for 1, a carta 1 vence.\n");
-    printf("Se a na maioria dos resultados a resposta for 0, a carta 2 vence.\n");
+    if (resultado1 > resultado2) {
+        printf("Resultado: A carta 1 venceu!\n");
+    } else if (resultado1 < resultado2){
+        printf("Resultado: A carta 2 venceu!\n");
+    } else {
+        printf("Resultado: As cartas 1 e 2 empataram!\n");
+    }
 
-    //Anotação: Se os valores forem iguais, a segunda carta recebe uma vantagem, pois o resultado será falso.
     return 0;
 }
