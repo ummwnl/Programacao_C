@@ -121,6 +121,7 @@ printf("----------------------------------------\n");
         resultado2++;
     }
 
+    //Imprimindo resultados
     if (resultado1 > resultado2) {
         printf("Resultado: A carta 1 venceu!\n");
     } else if (resultado1 < resultado2){
