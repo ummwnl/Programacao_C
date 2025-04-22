@@ -1,6 +1,26 @@
 #include <stdio.h>
 
 int main() {
+  //Exibindo informações do jogo
+  printf("Super Trunfo\n");
+  printf("Tema: Cidades\n\n");
+    
+  //Declarando a variável que vai armazenar a escolha do usuário no menu interativo
+  short int escolha;
+
+  //Imprimindo o menu interativo
+  printf("Se deseja começar a cadastrar suas cartas, digite 1.\n");
+  printf("Se deseja saber como o jogo funciona, digite 2.\n");
+  printf("Se deseja fechar o programa, digite qualquer coisa.\n");
+
+  //Solicitando o dado que corresponde a decisão do usuário
+  scanf("%d", &escolha);
+
+  //A escolha do jogador encaminhará para o respectivo bloco de código.
+  switch (escolha) {
+  
+  //Bloco 1: Inicia o jogo
+  case 1:{
     //Declarando variaveis da primeira carta
     char estado1, codigo1[4], cidade1[20];
     unsigned long int populacao1;
@@ -29,7 +49,7 @@ int main() {
     printf("Digite o número de pontos turísticos da primeira carta:\n");
     scanf("%d", &pontos_turisticos1);
 
-printf("----------------------------------------\n");
+  printf("----------------------------------------\n");
 
     //Solicitando dados da segunda carta
     printf("Digite o estado da segunda carta:\n");
@@ -55,7 +75,7 @@ printf("----------------------------------------\n");
     float super_poder1 = (float) populacao1 + area1 + pib1 + pontos_turisticos1 - densidade_populacional1;
     float super_poder2 = (float) populacao2 + area2 + pib2 + pontos_turisticos2 - densidade_populacional2;
 
-printf("----------------------------------------\n");
+  printf("----------------------------------------\n");
 
     //Imprimindo os dados da primeira carta
     printf("Carta 1\n");
@@ -81,12 +101,13 @@ printf("----------------------------------------\n");
     printf("Densidade Populacional: %.2f hab/km^2\n", densidade_populacional2);
     printf("PIB per Capita: %.2f reais\n", pib_per_capita2);
 
-printf("----------------------------------------\n");
+  printf("----------------------------------------\n");
 
-    //Realizando comparações
+    //Declarando variáveis que vão determinar resultado final de todas as comparações
     int resultado1 = 0;
     int resultado2 = 0;
 
+    //Comparando o superpoder das duas cartas
     if (super_poder1 > super_poder2) {
         resultado1++;
         printf("A carta que contém o maior superpoder é: Carta 1\n");
@@ -99,6 +120,7 @@ printf("----------------------------------------\n");
         printf("O superpoder de ambas as cartas é igual\n");
     }
 
+    //Comparando a população das duas cartas
     if (populacao1 > populacao2) {
         resultado1++;
         printf("A carta que contém a maior população é: Carta 1\n");
@@ -111,6 +133,7 @@ printf("----------------------------------------\n");
         printf("A população de ambas as cartas é igual\n");
     }
     
+    //Comparando a área das duas cartas
     if (area1 > area2) {
         resultado1++;
         printf("A carta que contém a maior área é: Carta 1\n");
@@ -123,6 +146,7 @@ printf("----------------------------------------\n");
         printf("A área de ambas as cartas é igual\n");
     }
 
+    //Comparando o PIB das duas cartas
     if (pib1 > pib2) {
         resultado1++;
         printf("A carta que contém o maior PIB é: Carta 1\n");
@@ -135,6 +159,7 @@ printf("----------------------------------------\n");
         printf("O PIB de ambas as cartas é igual\n");
     }
 
+    //Comparando os pontos turísticos das duas cartas
     if (pontos_turisticos1 > pontos_turisticos2) {
         resultado1++;
         printf("A carta que contém a maior quantidade de pontos turísticos é: Carta 1\n");
@@ -147,7 +172,8 @@ printf("----------------------------------------\n");
         printf("A quantidade de pontos turísticos de ambas as cartas é igual\n");
     }
     
-    if (densidade_populacional1 > densidade_populacional2) {
+    //Comparando a densidade populacional das duas cartas
+    if (densidade_populacional1 < densidade_populacional2) {
         resultado1++;
         printf("A carta que contém a menor densidade populacional é: Carta 1\n");
 
@@ -159,6 +185,7 @@ printf("----------------------------------------\n");
         printf("A densidade populacional de ambas as cartas é igual\n");
     }
 
+    //Comparando o PIB per capita das duas cartas
     if (pib_per_capita1 > pib_per_capita2) {
         resultado1++;
         printf("A carta que contém o maior PIB per capita é: Carta 1\n");
@@ -171,14 +198,28 @@ printf("----------------------------------------\n");
         printf("O PIB per capita de ambas as cartas é igual\n");
     }
 
-    //Imprimindo o resultado
+    //Imprimindo o resultado final
     if (resultado1 > resultado2) {
         printf("\nResultado: A carta 1 venceu!\n");
-    } else if (resultado1 < resultado2){
+      } else if (resultado1 < resultado2){
         printf("\nResultado: A carta 2 venceu!\n");
-    } else {
+      } else {
         printf("\nResultado: As cartas 1 e 2 empataram!\n");
-    }
+    }}
+  break;
 
-    return 0;
+  //Bloco 2: Mostra as regras do jogo:
+  case 2:{
+  printf("Neste jogo, o jogador deve cadastrar duas cartas de super trunfo, com o tema 'cidades'\n");
+  printf("Após serem cadastradas, todos os dados aparecerão na tela\n");
+  printf("Junto aos dados, uma comparação será feita automaticamente para decidir qual carta venceu em cada atributo.\n");
+  printf("No final, aparece uma mensagem que indica a carta que sobressaiu-se em todos os atributos comparados\n");}
+  break;
+
+  //Bloco 3: Fecha o jogo:
+  default:
+  break;
+  }
+  
+  return 0;
 }
