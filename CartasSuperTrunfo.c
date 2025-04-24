@@ -205,16 +205,16 @@ int main() {
         printf("\nResultado: A carta 2 venceu!\n");
       } else {
         printf("\nResultado: As cartas 1 e 2 empataram!\n");
-    }
-  } break;
+    }}
+  break;
 
   //Bloco 2: Mostra as regras do jogo:
   case 2:{
   printf("Neste jogo, o jogador deve cadastrar duas cartas de super trunfo, com o tema 'cidades'\n");
   printf("Após serem cadastradas, todos os dados aparecerão na tela\n");
-  printf("Junto aos dados, uma comparação será feita automaticamente para decidir qual carta venceu em cada atributo.\n");
-  printf("No final, aparece uma mensagem que indica a carta que sobressaiu-se em todos os atributos comparados\n");
-  } break;
+  printf("Junto aos dados, uma comparação será feita automaticamente para decidir qual carta venceu em cada atributo\n");
+  printf("No final, aparece uma mensagem que indica a carta que sobressaiu-se em todos os atributos comparados\n");}
+  break;
 
   //Bloco 3: Fecha o jogo:
   default:
